@@ -1,0 +1,23 @@
+import 'package:flutter/material.dart';
+
+class MatchHeaderScreen extends StatefulWidget {
+  const MatchHeaderScreen({super.key});
+
+  @override
+  State<MatchHeaderScreen> createState() => _MatchHeaderScreenState();
+}
+
+class _MatchHeaderScreenState extends State<MatchHeaderScreen> {
+  int _selectedTabIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Column(
+        children: [
+          Text('Match Header Screen'),
+        ],
+      ),
+    );
+  }
+}
