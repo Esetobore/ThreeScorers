@@ -79,10 +79,7 @@ flutter run --release
 - Specific state management implementation. This is partly my fault as i didn't take note of this until after developing the project required us to use Bloc.
 - Valid image and video URLs. Not sure if its just me but couldn't call the thumbnail url.
 
-### Limitations
-- Lack of control over the Figma design. Couldn't create Penalty Shootout as that section was covered and could't be accessed.
-
 ## Code Quality
-- Follows Flutter best practices
+- Follows Flutter best practices to the best of my abilities
 - Modular and maintainable code structure
 - Consistent code formatting

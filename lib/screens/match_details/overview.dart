@@ -33,8 +33,6 @@ class _OverviewState extends State<Overview> {
           const SizedBox(height: 16),
           const BestPlayerWidget(),
           const SizedBox(height: 16),
-          const GameInformation(),
-          const SizedBox(height: 16),
           const MatchTimelineWidget(),
           const SizedBox(height: 16),
           FutureBuilder<List<MatchMomentumModel>>(
@@ -49,6 +47,8 @@ class _OverviewState extends State<Overview> {
               return MatchMomentumChart(momentumData: snapshot.data!);
             },
           ),
+          const GameInformation(),
+          const SizedBox(height: 16),
         ],
       ),
     );
