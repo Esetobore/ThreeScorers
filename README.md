@@ -42,7 +42,6 @@ dependencies:
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/Esetobore/ThreeScorers.git
-cd threescorers_assessment
 ```
 
 ### 2. Install Dependencies
