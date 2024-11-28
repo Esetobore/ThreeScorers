@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:threescorersassessment/constants/asset_path.dart';
 import 'package:threescorersassessment/constants/colors.dart';
-import 'package:threescorersassessment/screens/details_screen.dart';
+import 'package:threescorersassessment/screens/match_details/details_screen.dart';
 
 class MatchCard extends StatelessWidget {
   const MatchCard({super.key});

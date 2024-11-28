@@ -3,7 +3,7 @@ import 'package:threescorersassessment/widgets/custom_navigation_bar.dart';
 import 'package:threescorersassessment/widgets/matches_index.dart';
 
 import '../constants/asset_path.dart';
-import '../widgets/league_icon_row.dart';
+import '../widgets/league_icon_row_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -81,7 +81,11 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(height: 20),
                 ]),
               ),
-              const MatchesIndex(),
+              const Expanded(
+                child: SingleChildScrollView(
+                  child: MatchesIndex(),
+                ),
+              ),
             ],
           ),
         ),

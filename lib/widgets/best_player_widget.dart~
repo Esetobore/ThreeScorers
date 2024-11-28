@@ -1,0 +1,122 @@
+import 'package:flutter/material.dart';
+import 'package:threescorersassessment/data_model/bestplayer.dart';
+import 'package:threescorersassessment/service/match_details_service.dart';
+
+class BestPlayerWidget extends StatefulWidget {
+  const BestPlayerWidget({super.key});
+
+  @override
+  State<BestPlayerWidget> createState() => _BestPlayerWidgetState();
+}
+
+class _BestPlayerWidgetState extends State<BestPlayerWidget> {
+  late Future<BestPlayer> _bestPlayerFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _bestPlayerFuture = MatchDetailsService().fetchBestPlayer();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<BestPlayer>(
+      future: _bestPlayerFuture,
+      builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          return Center(child: Text('Error: ${snapshot.error}'));
+        }
+        if (!snapshot.hasData) {
+          return const Center(child: Text(''));
+        }
+        final player = snapshot.data!;
+        return _buildPlayerCard(player);
+      },
+    );
+  }
+
+  Widget _buildPlayerCard(BestPlayer player) {
+    return Card(
+      margin: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          // Header
+          Container(
+            decoration: const BoxDecoration(
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10),
+                topRight: Radius.circular(10),
+              ),
+              color: Colors.teal,
+            ),
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 15),
+            child: const Text(
+              'Player Of The Match',
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.grey[300],
+                  ),
+                  child: Center(
+                    child: Text(
+                      player.shortName,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                Text(
+                  player.name,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Container(
+                  width: 50,
+                  height: 30,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    color: Colors.teal,
+                  ),
+                  child: Center(
+                    child: Text(
+                      player.rating.toStringAsFixed(1),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

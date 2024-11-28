@@ -29,8 +29,8 @@ class AssetsPath {
   static const String swap = 'assets/images/icons/swap.png';
   static const String yellowCard = 'assets/images/icons/yellow_card.png';
   static const String redCard = 'assets/images/icons/red_card.png';
-  static const String play = 'assets/images/icons/play.png';
-  static const String goal = 'assets/images/icons/soccer_ball.png';
+  static const String play = 'assets/images/icons/goal.png';
+  static const String goal = 'assets/images/icons/goal.png';
 
   //Clubs
   static const String barcelona = 'assets/images/clubs/club1.png';

@@ -5,14 +5,12 @@ class LiveMatches extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
-        children: [
-          SizedBox(
-            child: Center(child: Text('No Live Matches')),
-          ),
-        ],
-      ),
+    return const Column(
+      children: [
+        SizedBox(
+          child: Center(child: Text('No Live Matches')),
+        ),
+      ],
     );
   }
 }

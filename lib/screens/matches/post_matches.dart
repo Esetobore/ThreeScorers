@@ -6,12 +6,10 @@ class PostMatches extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
-        children: [
-          MatchCard(),
-        ],
-      ),
+    return const Column(
+      children: [
+        MatchCard(),
+      ],
     );
   }
 }

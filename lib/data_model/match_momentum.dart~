@@ -1,0 +1,21 @@
+class MatchMomentum {
+  final int ballPossession;
+  final List<double> ballPossessionHistory;
+
+  MatchMomentum({
+    required this.ballPossession,
+    required this.ballPossessionHistory,
+  });
+
+  factory MatchMomentum.fromJson(Map<String, dynamic> json) {
+    final ballPossessionHistory =
+        (json['ballPossessionHistory'] as List<dynamic>)
+            .map((item) => item as double)
+            .toList();
+
+    return MatchMomentum(
+      ballPossession: json['ballPossession'] as int,
+      ballPossessionHistory: ballPossessionHistory,
+    );
+  }
+}

@@ -10,7 +10,12 @@ class MatchCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => const DetailsScreen(),),);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const DetailsScreen(),
+          ),
+        );
       },
       child: Card(
         margin: const EdgeInsets.all(16.0),
@@ -111,8 +116,8 @@ class MatchCard extends StatelessWidget {
                       CircleAvatar(
                         radius: 25,
                         backgroundColor: Colors.transparent,
-                        child:
-                            Image.asset(AssetsPath.girona, height: 50, width: 50),
+                        child: Image.asset(AssetsPath.girona,
+                            height: 50, width: 50),
                       ),
                       const SizedBox(height: 8.0),
                       const Text(

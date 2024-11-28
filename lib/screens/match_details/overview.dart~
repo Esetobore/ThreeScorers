@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+import 'package:threescorersassessment/data_model/match_momentum.dart';
+import 'package:threescorersassessment/service/match_details_service.dart';
+import 'package:threescorersassessment/widgets/best_player_widget.dart';
+import 'package:threescorersassessment/widgets/game_informataion.dart';
+import 'package:threescorersassessment/widgets/match_momentum_widget.dart';
+import 'package:threescorersassessment/widgets/match_timeline_widget.dart';
+import 'package:threescorersassessment/widgets/video_highlights_widget.dart';
+
+class Overview extends StatefulWidget {
+  const Overview({super.key});
+
+  @override
+  State<Overview> createState() => _OverviewState();
+}
+
+class _OverviewState extends State<Overview> {
+  late Future<List<MatchMomentumModel>> _momentumFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _momentumFuture = MatchDetailsService().fetchMatchMomentum();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const VideoHighlightsWidget(),
+          const SizedBox(height: 16),
+          const BestPlayerWidget(),
+          const SizedBox(height: 16),
+          const GameInformation(),
+          const SizedBox(height: 16),
+          FutureBuilder<List<MatchMomentumModel>>(
+            future: _momentumFuture,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const CircularProgressIndicator();
+              }
+              if (snapshot.hasError) {
+                return Text('Error: ${snapshot.error}');
+              }
+              return MatchMomentumChart(momentumData: snapshot.data!);
+            },
+          ),
+          const SizedBox(height: 16),
+          const MatchTimelineWidget(),
+        ],
+      ),
+    );
+  }
+}

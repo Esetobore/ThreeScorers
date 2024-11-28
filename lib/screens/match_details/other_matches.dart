@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class NewMatches extends StatelessWidget {
-  const NewMatches({super.key});
+class OtherMatches extends StatelessWidget {
+  const OtherMatches({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Column(
       children: [
         SizedBox(
-          child: Center(child: Text('No New Matches')),
+          child: Center(child: Text('No Other Matches')),
         ),
       ],
     );

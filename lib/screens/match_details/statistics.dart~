@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LiveMatches extends StatelessWidget {
-  const LiveMatches({super.key});
+class Statistics extends StatelessWidget {
+  const Statistics({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +9,7 @@ class LiveMatches extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            child: Center(child: Text('No New Matches')),
+            child: Center(child: Text('No Statistics')),
           ),
         ],
       ),
