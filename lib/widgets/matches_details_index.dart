@@ -28,7 +28,6 @@ class _MatchesDetailsIndex extends State<MatchesDetailsIndex> {
             });
           },
         ),
-        // Content based on selected tab
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: _buildSelectedView(),
@@ -52,5 +51,3 @@ class _MatchesDetailsIndex extends State<MatchesDetailsIndex> {
     }
   }
 }
-
-// Custom Tab Bar Widget`

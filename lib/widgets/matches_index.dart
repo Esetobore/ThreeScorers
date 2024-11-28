@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:threescorersassessment/screens/matches/live_matches.dart';
+import 'package:threescorersassessment/screens/matches/new_matches.dart';
+import 'package:threescorersassessment/screens/matches/post_matches.dart';
 import 'package:threescorersassessment/widgets/matches_tab_bar.dart';
-
-import '../screens/matches/live_matches.dart';
-import '../screens/matches/new_matches.dart';
-import '../screens/matches/post_matches.dart';
 
 class MatchesIndex extends StatefulWidget {
   const MatchesIndex({super.key});
@@ -49,5 +48,3 @@ class _MatchesIndexState extends State<MatchesIndex> {
     }
   }
 }
-
-// Custom Tab Bar Widget

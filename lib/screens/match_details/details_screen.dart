@@ -68,8 +68,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
             // Scrollable content section
             const Expanded(
               child: SingleChildScrollView(
-                child:
-                    MatchesDetailsIndex(), // Make sure this widget has bounded content
+                child: MatchesDetailsIndex(),
               ),
             ),
           ],

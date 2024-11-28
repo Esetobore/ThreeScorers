@@ -12,7 +12,7 @@ class BestPlayer {
     required this.position,
     required this.jerseyNumber,
     required this.rating,
-    this.imageUrl = '', // You might want to add a default image
+    this.imageUrl = '',
   });
 
   factory BestPlayer.fromJson(Map<String, dynamic> json) {

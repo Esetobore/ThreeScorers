@@ -34,7 +34,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   fl_chart: ^0.65.0  # For momentum charts
   http: ^1.2.0       # For API calls
-  cached_network_image: ^3.3.0  # For efficient image loading
 ```
 
 ## Project Setup

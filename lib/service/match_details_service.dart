@@ -63,7 +63,7 @@ class MatchDetailsService {
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
-      final allPeriodStats = data['data']['statistics'][0]; // ALL period stats
+      final allPeriodStats = data['data']['statistics'][0];
 
       final ballPossession = allPeriodStats['groups'][0]['statisticsItems']
           .firstWhere((item) => item['key'] == 'ballPossession');
